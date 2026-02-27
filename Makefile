@@ -24,7 +24,8 @@ test: ## Run test suite
 	julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.test()'
 
 bench: ## Run benchmarks
-	julia --project=. bench/run_bench.jl
+	julia --project=bench -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
+	julia --project=bench bench/run_bench.jl
 
 docs: ## Build documentation locally
 	julia --project=docs -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
