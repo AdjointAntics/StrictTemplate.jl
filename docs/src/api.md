@@ -1,6 +1,4 @@
-# 🔬 API Reference
-
-> *Everything exported, nothing hidden. Read the source if you don't believe us.*
+# API Reference
 
 ```@autodocs
 Modules = [StrictTemplate]

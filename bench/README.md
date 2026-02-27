@@ -1,8 +1,6 @@
-# 🏋️ Benchmarks
+# Benchmarks
 
-> *If you didn't measure it, it didn't happen.*
-
-Uses [BenchmarkTools.jl](https://github.com/JuliaCI/BenchmarkTools.jl) — the gold standard for making Julia go brrr.
+Uses [BenchmarkTools.jl](https://github.com/JuliaCI/BenchmarkTools.jl).
 
 ## Run
 
@@ -10,20 +8,12 @@ Uses [BenchmarkTools.jl](https://github.com/JuliaCI/BenchmarkTools.jl) — the g
 make bench
 ```
 
-Or if you enjoy typing:
-
-```bash
-julia --project=bench bench/run_bench.jl
-```
-
 ## Structure
 
-- `benchmarks/*_benchmark.jl` — Benchmark suites (auto-discovered by `run_bench.jl`)
-- `run_bench.jl` — Collects all suites, runs them, judges against baseline if one exists
+- `benchmarks/*_benchmark.jl` — Suites, auto-discovered
+- `run_bench.jl` — Runner with optional baseline comparison
 
-## Adding benchmarks
-
-Drop a file in `benchmarks/` following the `<name>_benchmark.jl` convention:
+## Add a benchmark
 
 ```julia
 using BenchmarkTools
@@ -32,15 +22,12 @@ using StrictTemplate
 SUITE["my_function"] = @benchmarkable my_function(args...)
 ```
 
-The runner picks it up automatically. No registry, no config, no drama.
+Drop it in `benchmarks/`. The runner finds it.
 
-## 📊 Baseline comparison
-
-Save a baseline after a good run:
+## Baseline
 
 ```julia
-using BenchmarkTools
 BenchmarkTools.save("bench/baseline.json", results)
 ```
 
-Future runs compare against it. Regressions get called out. Your past self holds your future self accountable.
+Next run compares. Time only moves in one direction, but your allocations shouldn't.
