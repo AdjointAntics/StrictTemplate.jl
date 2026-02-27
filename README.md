@@ -1,76 +1,65 @@
 <p align="center">
   <img src="https://img.shields.io/badge/F_⊣_G-adjoint paired-00FFCE?style=flat-square" alt="Adjoint Paired"/>
   <img src="https://img.shields.io/badge/julia-1.10+-9558B2?style=flat-square&logo=julia&logoColor=white" alt="Julia 1.10+"/>
-  <img src="https://img.shields.io/badge/vibes-immaculate-ff69b4?style=flat-square" alt="Vibes"/>
 </p>
 
-# 🧬 StrictTemplate.jl
+# StrictTemplate.jl
 
-> *The opinionated starting point for [AdjointAntics](https://github.com/AdjointAntics) packages. Strict about structure, loose about everything else.*
+The starting point for [AdjointAntics](https://github.com/AdjointAntics) packages.
 
-You wouldn't build a house without a foundation. You wouldn't launch a satellite without a checklist. You *definitely* shouldn't start a Julia package without CI, docs, and tests already wired up.
+Every decision in this template was made so you don't have to. CI runs. Docs deploy. Tests exist. Benchmarks have a place to live. The changelog knows what format it is. You are free to think about the actual problem.
 
-This is that checklist. Clone it, rename it, ship something beautiful.
+## Create a New Package
 
----
-
-## 🚀 Create a New Package
-
-### 1. Steal this template
-
-On GitHub, click **"Use this template"** > **"Create a new repository"**, or if you prefer the terminal life:
+### 1. Clone the template
 
 ```bash
 gh repo create AdjointAntics/YourPackage.jl --template AdjointAntics/StrictTemplate.jl --public --clone
 ```
 
-### 2. Make it yours
+Or click **"Use this template"** on GitHub if you prefer buttons.
+
+### 2. Rename everything
 
 ```bash
 cd YourPackage.jl
 make init NAME=YourPackage
 ```
 
-This does the boring stuff so you don't have to — replaces all `StrictTemplate` references, generates a fresh UUID, renames the source file, updates the git remote. You're welcome.
+### 3. GitHub Pages
 
-### 3. Set up GitHub Pages
+**Settings > Pages** — source: `gh-pages`, folder: `/ (root)`.
 
-Go to **Settings > Pages** and set source to **"Deploy from a branch"** with branch `gh-pages` and folder `/ (root)`.
-
-### 4. Optional: Documenter deploy key
+### 4. Documenter deploy key (optional)
 
 ```julia
 using DocumenterTools
 DocumenterTools.genkeys(user="AdjointAntics", repo="YourPackage.jl")
 ```
 
-Add the public key as a deploy key and the private key as `DOCUMENTER_KEY` in repo secrets.
+Public key → deploy key. Private key → `DOCUMENTER_KEY` secret.
 
----
+## What's Here
 
-## 📦 What's In The Box
+- **Tests** — Aqua.jl quality checks. A placeholder suite that proves the module loads.
+- **CI** — Julia 1.10 + nightly on Ubuntu and macOS. It either passes or it doesn't.
+- **Docs** — Documenter.jl. Deploys itself. You just have to write words.
+- **Benchmarks** — BenchmarkTools.jl scaffold. Baseline comparison built in.
+- **Changelog** — Keep a Changelog. For when you forget what you did last Tuesday.
+- **TagBot** — Makes releases so you can pretend you planned them.
+- **Strict.jl** — Not yet real. When it is, every package from this template will know.
 
-| | What | Why |
-|:--|:--|:--|
-| 🧪 | **Tests** | Aqua.jl code quality + placeholder suite. No excuses. |
-| 🔁 | **CI** | GitHub Actions on Julia 1.10 + nightly. Ubuntu + macOS. |
-| 📖 | **Docs** | Documenter.jl, deployed to GitHub Pages. Write the docs. |
-| 🏷️ | **TagBot** | Automated release tagging. Because you'll forget. |
-| 🏋️ | **Benchmarks** | BenchmarkTools.jl scaffold with baseline comparison. |
-| 📋 | **Changelog** | [Keep a Changelog](https://keepachangelog.com/) format. For the humans. |
-| 🔮 | **Strict.jl** | *Coming soon.* Placeholder for code standards enforcement. |
-
-## 🛠️ Makefile Targets
+## Makefile
 
 ```
-make help     🗺️  Show available targets
-make init     🧬  Initialize new package from template
-make test     🧪  Run test suite
-make bench    🏋️  Run benchmarks
-make docs     📖  Build documentation locally
-make clean    🧹  Remove build artifacts
+make help     Show targets
+make init     Initialize from template
+make test     Run tests
+make bench    Run benchmarks
+make docs     Build docs
+make clean    Clean artifacts
 ```
 
 ---
 
-<p align="center"><sub>Built with 🫠 by <a href="https://github.com/AdjointAntics">AdjointAntics</a> · Strict about structure, weird about everything else</sub></p>
+<p align="center"><sub>The universal property of a good template is that every package factors through it uniquely.</sub></p>

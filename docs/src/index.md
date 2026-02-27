@@ -1,18 +1,14 @@
 # StrictTemplate.jl
 
-> *You're looking at a cocoon. The butterfly is whatever you build next.*
+A template package for [AdjointAntics](https://github.com/AdjointAntics).
 
-This is a template package for the [AdjointAntics](https://github.com/AdjointAntics) organization.
+Everything below this line will be replaced by your package's documentation. That is the entire point.
 
-## Getting Started
+## Usage
 
-1. Create a new repo from this template on GitHub
-2. Clone it locally
-3. Run `make init NAME=YourPackageName`
-4. Replace this placeholder with something the world needs
-5. Ship it 🚢
-
-See the [README](https://github.com/AdjointAntics/StrictTemplate.jl) for full setup instructions.
+1. Create a new repo from this template
+2. `make init NAME=YourPackage`
+3. Delete these words. Write better ones.
 
 ## API
 

@@ -5,9 +5,7 @@ export greet
 """
     greet(name)
 
-Return a greeting string. This function exists solely to prove the template works.
-
-Replace it with something that would make a category theorist proud.
+Proof that the template works. Replace with something less trivial.
 
 # Examples
 ```jldoctest
