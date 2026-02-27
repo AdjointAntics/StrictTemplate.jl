@@ -1,0 +1,8 @@
+name = "StrictTemplate"
+uuid = "251259e7-3ef8-4394-bd08-e94f4bb747d3"
+license = "MIT"
+authors = ["AdjointAntics"]
+version = "0.0.1"
+
+[compat]
+julia = "1.10"
