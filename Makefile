@@ -1,4 +1,4 @@
-.PHONY: init test docs clean help
+.PHONY: init test bench docs clean help
 
 OLD_NAME := StrictTemplate
 OLD_UUID := 251259e7-3ef8-4394-bd08-e94f4bb747d3
@@ -23,9 +23,12 @@ init: ## Initialize new package: make init NAME=YourPackage [UUID=optional-uuid]
 test: ## Run test suite
 	julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.test()'
 
+bench: ## Run benchmarks
+	julia --project=. bench/run_bench.jl
+
 docs: ## Build documentation locally
 	julia --project=docs -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
 	julia --project=docs docs/make.jl
 
 clean: ## Remove build artifacts
-	rm -rf docs/build docs/src/generated Manifest.toml docs/Manifest.toml
+	rm -rf docs/build Manifest.toml docs/Manifest.toml

@@ -12,3 +12,9 @@ Use this repository as a template to create new Julia packages:
 4. Start building
 
 See the [README](https://github.com/AdjointAntics/StrictTemplate.jl) for full setup instructions.
+
+## API
+
+```@autodocs
+Modules = [StrictTemplate]
+```
