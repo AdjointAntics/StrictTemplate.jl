@@ -1,4 +1,6 @@
-# Documentation
+# 📖 Documentation
+
+> *Undocumented code is a love letter you never sent.*
 
 Built with [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl).
 
@@ -8,14 +10,14 @@ Built with [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl).
 make docs
 ```
 
-Or manually:
+Or the scenic route:
 
 ```bash
 julia --project=docs -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
 julia --project=docs docs/make.jl
 ```
 
-Output goes to `docs/build/`.
+Output lands in `docs/build/`. Open `index.html` and bask.
 
 ## Structure
 
@@ -24,5 +26,7 @@ Output goes to `docs/build/`.
 
 ## Deploy
 
-Documentation is built and deployed to GitHub Pages automatically by CI on pushes to `main`.
+CI builds and deploys to GitHub Pages on every push to `main`.
 Requires a `DOCUMENTER_KEY` secret (see root README for setup).
+
+The docs deploy themselves. You just have to write them. That's the hard part. We believe in you.

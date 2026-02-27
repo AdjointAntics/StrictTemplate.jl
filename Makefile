@@ -21,7 +21,7 @@ init: ## Initialize new package: make init NAME=YourPackage [UUID=optional-uuid]
 	@echo "Done. Review with 'git diff' then commit when ready."
 
 test: ## Run test suite
-	julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.test()'
+	julia --project=test -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate(); Pkg.test()'
 
 bench: ## Run benchmarks
 	julia --project=bench -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
