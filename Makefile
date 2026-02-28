@@ -21,8 +21,9 @@ init: ## Initialize new package: make init NAME=YourPackage [UUID=optional-uuid]
 	@echo "UUID: $(NEW_UUID)"
 	@echo ""
 	@git grep -l "$(OLD_NAME)" | xargs sed -i 's/$(OLD_NAME)/$(NAME)/g'
-	@sed -i 's/$(OLD_UUID)/$(NEW_UUID)/g' Project.toml test/Project.toml docs/Project.toml
+	@sed -i 's/$(OLD_UUID)/$(NEW_UUID)/g' Project.toml test/Project.toml docs/Project.toml bench/Project.toml
 	@mv src/$(OLD_NAME).jl src/$(NAME).jl
+	@rm -f TEMPLATE.md
 	@git remote set-url origin https://github.com/AdjointAntics/$(NAME).jl.git
 	@echo ""
 	@echo "Done. Review with 'git diff' then commit when ready."
