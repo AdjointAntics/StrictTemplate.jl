@@ -1,3 +1,13 @@
+# CI for StrictTemplate.jl
+#
+# Runs the test suite across a matrix of Julia versions and operating systems,
+# then builds and deploys documentation. Triggers on pushes to main, any tag,
+# pull requests, and manual dispatch.
+#
+# The matrix tests structure preservation: if your package works on 1.10 and
+# survives nightly, the morphism from source to binary is stable. fail-fast
+# is off so a nightly regression doesn't mask an LTS result.
+
 name: CI
 
 on:
@@ -19,16 +29,16 @@ jobs:
     name: Julia ${{ matrix.version }} - ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: false
+      fail-fast: false  # nightly failures shouldn't block LTS results
       matrix:
         version:
-          - '1.10'
-          - 'nightly'
+          - '1.10'   # compat floor — the version you promise to support
+          - 'nightly' # catches upstream breakage before it surprises you
         os:
           - ubuntu-latest
         include:
           - version: '1.10'
-            os: macos-latest
+            os: macos-latest  # cross-platform validation for the stable version
     steps:
       - uses: actions/checkout@v6
       - uses: julia-actions/setup-julia@v2

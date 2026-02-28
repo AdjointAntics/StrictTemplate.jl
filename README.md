@@ -5,11 +5,13 @@
 
 # StrictTemplate.jl
 
-The starting point for [AdjointAntics](https://github.com/AdjointAntics) packages.
+The initial object in the category of [AdjointAntics](https://github.com/AdjointAntics) packages. For any package you want to build, there is exactly one way to start: from here.
 
-Every decision in this template was made so you don't have to. CI runs. Docs deploy. Tests exist. Benchmarks have a place to live. The changelog knows what format it is. You are free to think about the actual problem.
+A template is not a collection of files. It's a structure — CI, docs, tests, benchmarks, changelog, Makefile — wired together so that every decision is already made. You inherit the decisions. You replace the content. The infrastructure stays; the placeholder goes. That's the contract.
 
-## Create a New Package
+## Quickstart
+
+Three commands. No decisions. That's the universal property.
 
 ### 1. Clone the template
 
@@ -26,6 +28,8 @@ cd YourPackage.jl
 make init NAME=YourPackage
 ```
 
+One command. Every file, every UUID, every remote — all renamed. The unique morphism from initial object to your package.
+
 ### 3. GitHub Pages
 
 **Settings > Pages** — source: `gh-pages`, folder: `/ (root)`.
@@ -39,27 +43,49 @@ DocumenterTools.genkeys(user="AdjointAntics", repo="YourPackage.jl")
 
 Public key → deploy key. Private key → `DOCUMENTER_KEY` secret.
 
-## What's Here
+## Architecture
 
-- **Tests** — Aqua.jl quality checks. A placeholder suite that proves the module loads.
-- **CI** — Julia 1.10 + nightly on Ubuntu and macOS. It either passes or it doesn't.
-- **Docs** — Documenter.jl. Deploys itself. You just have to write words.
-- **Benchmarks** — BenchmarkTools.jl scaffold. Baseline comparison built in.
-- **Changelog** — Keep a Changelog. For when you forget what you did last Tuesday.
-- **TagBot** — Makes releases so you can pretend you planned them.
-- **Strict.jl** — Not yet real. When it is, every package from this template will know.
+What follows is what's here and why it's shaped the way it is.
+
+### Tests
+
+[Aqua.jl](https://github.com/JuliaTesting/Aqua.jl) runs the quality checks you'd forget to write — ambiguities, unbound type parameters, stale dependencies. The core suite covers the public API. Together they assert that two paths to the same result agree. That's all commutativity is, and all correctness ever was.
+
+### CI
+
+Julia 1.10 and nightly on Ubuntu. 1.10 on macOS. `fail-fast: false` so a nightly regression doesn't hide an LTS result. CI maps your package through every supported environment and checks that the structure survives the trip. A functor that doesn't preserve structure isn't a functor — it's a bug.
+
+### Docs
+
+[Documenter.jl](https://github.com/JuliaDocs/Documenter.jl) builds it. GitHub Pages hosts it. The API reference generates itself from docstrings — each function characterized by its behavior on representative inputs. You write the docstrings; everything else is handled.
+
+### Benchmarks
+
+[BenchmarkTools.jl](https://github.com/JuliaCI/BenchmarkTools.jl) with baseline comparison. Drop a `*_benchmark.jl` file in `benchmarks/`, the runner discovers it. Save a baseline, and `judge` tells you what got faster and what didn't. Performance is a measurement on every operation, not a feature you add later.
+
+### Changelog
+
+[Keep a Changelog](https://keepachangelog.com) format. [Semantic Versioning](https://semver.org). The accumulated record — what changed, when, what it means. Coherent in retrospect.
+
+### TagBot
+
+Automated releases from registry tags. You register the package; [TagBot](https://github.com/JuliaRegistries/TagBot) cuts the GitHub release.
+
+### Strict.jl
+
+Not yet real. When it is, every package from this template will know.
 
 ## Makefile
 
 ```
 make help     Show targets
 make init     Initialize from template
-make test     Run tests
-make bench    Run benchmarks
+make test     Run tests (Aqua + core suite)
+make bench    Run benchmarks (with baseline comparison if available)
 make docs     Build docs
 make clean    Clean artifacts
 ```
 
 ---
 
-<p align="center"><sub>The universal property of a good template is that every package factors through it uniquely.</sub></p>
+<p align="center"><sub>The universal property of a good template: every package factors through it, uniquely.</sub></p>

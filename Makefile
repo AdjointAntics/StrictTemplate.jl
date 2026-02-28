@@ -1,3 +1,10 @@
+# StrictTemplate.jl Makefile
+#
+# Every action you can take on this package has a target here.
+# `make help` lists them. The ## comments after each target
+# are the help strings — grep extracts them automatically.
+# Add a target, add a ## comment, and it appears in the listing.
+
 .PHONY: init test bench docs clean help
 
 OLD_NAME := StrictTemplate
@@ -20,10 +27,10 @@ init: ## Initialize new package: make init NAME=YourPackage [UUID=optional-uuid]
 	@echo ""
 	@echo "Done. Review with 'git diff' then commit when ready."
 
-test: ## Run test suite
-	julia --project=test -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate(); Pkg.test()'
+test: ## Run tests (Aqua + core suite)
+	julia --project=test -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate(); include("test/runtests.jl")'
 
-bench: ## Run benchmarks
+bench: ## Run benchmarks (with baseline comparison if available)
 	julia --project=bench -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
 	julia --project=bench bench/run_bench.jl
 

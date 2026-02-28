@@ -1,5 +1,7 @@
 # Benchmarks
 
+Performance is a property of every operation you write, whether you measure it or not. This directory is where you measure it.
+
 Uses [BenchmarkTools.jl](https://github.com/JuliaCI/BenchmarkTools.jl).
 
 ## Run
@@ -10,8 +12,8 @@ make bench
 
 ## Structure
 
-- `benchmarks/*_benchmark.jl` — Suites, auto-discovered
-- `run_bench.jl` — Runner with optional baseline comparison
+- `benchmarks/*_benchmark.jl` — Suites, auto-discovered by filename convention
+- `run_bench.jl` — Runner: discovers suites, executes them, compares against baseline if one exists
 
 ## Add a benchmark
 
@@ -22,7 +24,7 @@ using StrictTemplate
 SUITE["my_function"] = @benchmarkable my_function(args...)
 ```
 
-Drop it in `benchmarks/`. The runner finds it.
+Name the file `*_benchmark.jl` and drop it in `benchmarks/`. The runner finds it.
 
 ## Baseline
 
@@ -30,4 +32,6 @@ Drop it in `benchmarks/`. The runner finds it.
 BenchmarkTools.save("bench/baseline.json", results)
 ```
 
-Next run compares. Time only moves in one direction, but your allocations shouldn't.
+Next run compares automatically. `judge` tells you what moved and which direction.
+
+Time only moves in one direction, but your allocations shouldn't.
