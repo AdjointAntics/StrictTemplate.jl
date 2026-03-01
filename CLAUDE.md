@@ -11,7 +11,7 @@ Org resources: [ecosystem](https://github.com/AdjointAntics/.github/blob/main/RE
 - `TEMPLATE.md` -- template creation instructions and checklist
 - `src/<PackageName>.jl` -- main module (rename on fork)
 - `test/runtests.jl` -- test runner (Aqua + test files)
-- `bench/` -- benchmark infrastructure (HomTime.jl or BenchmarkTools.jl)
+- `bench/` -- benchmark infrastructure (BenchmarkTools.jl; switch to HomTime.jl post-scaffold)
 - `docs/` -- Documenter.jl setup
 
 ## Running Tests

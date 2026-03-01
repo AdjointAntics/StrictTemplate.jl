@@ -62,7 +62,7 @@ The infrastructure writes itself. The documentation does not.
 
 ### Benchmarks
 
-[BenchmarkTools.jl](https://github.com/JuliaCI/BenchmarkTools.jl) with baseline comparison. Drop a `*_benchmark.jl` in `bench/benchmarks/` — the runner discovers it. `judge` tells you what moved.
+[BenchmarkTools.jl](https://github.com/JuliaCI/BenchmarkTools.jl) with baseline comparison. Drop a `*_benchmark.jl` in `bench/benchmarks/` — the runner discovers it. `judge` tells you what moved. The template ships with BenchmarkTools.jl; ecosystem packages should switch to [HomTime.jl](https://github.com/AdjointAntics/HomTime.jl) after initialization (see the post-scaffold checklist in CLAUDE.md).
 
 ### Changelog
 
