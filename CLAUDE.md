@@ -10,7 +10,7 @@ Org resources: [ecosystem](https://github.com/AdjointAntics/.github/blob/main/RE
 
 - `TEMPLATE.md` -- template creation instructions and checklist
 - `src/<PackageName>.jl` -- main module (rename on fork)
-- `test/runtests.jl` -- test runner (Aqua + test files)
+- `test/runtests.jl` -- test runner
 - `bench/` -- benchmark infrastructure (BenchmarkTools.jl; switch to HomTime.jl post-scaffold)
 - `docs/` -- Documenter.jl setup
 
@@ -46,7 +46,7 @@ After `make init NAME=YourPackage`:
    - Group exports by category with section comments
    - Use TitleCase.jl filenames for included files
 
-3. **test/** — Keep `aqua.jl` from template, add `test_*.jl` files:
+3. **test/** — Add `test_*.jl` files:
    - One test file per source module
    - Include all in `runtests.jl` within the main `@testset`
 

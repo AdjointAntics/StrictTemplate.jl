@@ -18,7 +18,7 @@ make init NAME=MyPackage
 | `bench/` | HomTime.jl benchmark scaffold with auto-discovery |
 | `docs/` | Documenter.jl setup with GitHub Pages deployment |
 | `src/` | Module with docstring template |
-| `test/` | Aqua quality gates + Strict.jl linting + test scaffold |
+| `test/` | Strict.jl linting + test scaffold |
 | `CLAUDE.md` | AI assistant context template |
 | `CONTRIBUTING.md` | Contribution guide |
 | `Makefile` | `test` / `bench` / `docs` / `clean` targets |

@@ -1,5 +1,4 @@
 [deps]
-Aqua = "4c88cf16-eb10-579e-8560-4a9242c79595"
 StrictTemplate = "251259e7-3ef8-4394-bd08-e94f4bb747d3"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 

@@ -21,7 +21,7 @@ MyPackage.jl/
 ├── bench/                HomTime.jl benchmark scaffold
 ├── docs/                 Documenter.jl setup
 ├── src/MyPackage.jl      Module with docstring template
-├── test/                 Aqua + Strict + test scaffold
+├── test/                 Strict + test scaffold
 ├── CHANGELOG.md          Keep a Changelog format
 ├── CLAUDE.md             AI assistant context
 ├── CONTRIBUTING.md       Contribution guide
