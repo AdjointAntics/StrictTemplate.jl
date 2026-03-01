@@ -4,6 +4,8 @@
 
 StrictTemplate.jl is an AdjointAntics package template. It scaffolds new Julia packages with CI, documentation, benchmarks, and testing infrastructure. It is NOT a runnable package — it's a project generation scaffold.
 
+Org resources: [ecosystem](https://github.com/AdjointAntics/.github/blob/main/README.md) | [glossary](https://github.com/AdjointAntics/.github/blob/main/GLOSSARY.md) | [standards](https://github.com/AdjointAntics/.github/blob/main/STANDARDS.md)
+
 ## Key Files
 
 - `TEMPLATE.md` -- template creation instructions and checklist

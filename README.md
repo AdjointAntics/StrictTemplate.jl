@@ -72,6 +72,10 @@ The infrastructure writes itself. The documentation does not.
 
 See the [Contributing Guide](CONTRIBUTING.md). [Open an issue](https://github.com/AdjointAntics/StrictTemplate.jl/issues) or submit a pull request.
 
+## Part of AdjointAntics
+
+This package is part of the [AdjointAntics](https://github.com/AdjointAntics/.github/blob/main/README.md) ecosystem. See the [glossary](https://github.com/AdjointAntics/.github/blob/main/GLOSSARY.md) for categorical terminology and the [standards](https://github.com/AdjointAntics/.github/blob/main/STANDARDS.md) for conventions.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
