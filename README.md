@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://github.com/AdjointAntics/StrictTemplate.jl/actions/workflows/CI.yml"><img src="https://github.com/AdjointAntics/StrictTemplate.jl/actions/workflows/CI.yml/badge.svg" alt="CI"/></a>
   <a href="https://AdjointAntics.github.io/StrictTemplate.jl/dev/"><img src="https://img.shields.io/badge/docs-dev-00FFCE?style=flat-square" alt="Dev Docs"/></a>
-  <img src="https://img.shields.io/badge/F_⊣_G-adjoint paired-00FFCE?style=flat-square" alt="Adjoint Paired"/>
+  <img src="https://img.shields.io/badge/F_%E2%8A%A3_G-adjoint%20paired-00FFCE?style=flat-square" alt="Adjoint Paired"/>
   <img src="https://img.shields.io/badge/julia-1.10+-9558B2?style=flat-square&logo=julia&logoColor=white" alt="Julia 1.10+"/>
 </p>
 
