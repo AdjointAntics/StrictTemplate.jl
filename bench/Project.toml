@@ -1,3 +1,10 @@
 [deps]
-BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+HomTime = "4ea9fb63-ed65-45bc-904e-cb86f4459fff"
 StrictTemplate = "251259e7-3ef8-4394-bd08-e94f4bb747d3"
+
+[sources]
+HomTime = {path = "../../HomTime.jl"}
+StrictTemplate = {path = ".."}
+
+[compat]
+julia = "1.10"
