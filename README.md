@@ -9,32 +9,29 @@
   <img src="https://img.shields.io/badge/julia-1.10+-9558B2?style=flat-square&logo=julia&logoColor=white" alt="Julia 1.10+"/>
 </p>
 
-# StrictTemplate.jl
+# StrictTemplate.jl — The universal property of package creation
 
-<!-- Your package description goes here. Three sentences:
-     What is it? What does it provide? What structure powers it?
-     The algebra should speak for itself. -->
+StrictTemplate.jl is the scaffold that every other package in the AdjointAntics ecosystem factors through. Clone it, run `make init`, and you have a fully-wired Julia package with CI, docs, benchmarks, linting, and the categorical conventions baked in. Every package you see in this org started here.
 
-An [AdjointAntics](https://github.com/AdjointAntics) package.
+## What You Get
 
-## Installation
-
-```julia
-using Pkg
-Pkg.add("StrictTemplate")
+```
+MyPackage.jl/
+├── .github/workflows/    CI + TagBot + benchmarks
+├── bench/                HomTime.jl benchmark scaffold
+├── docs/                 Documenter.jl setup
+├── src/MyPackage.jl      Module with docstring template
+├── test/                 Aqua + Strict + test scaffold
+├── CHANGELOG.md          Keep a Changelog format
+├── CLAUDE.md             AI assistant context
+├── CONTRIBUTING.md       Contribution guide
+├── LICENSE               MIT
+├── Makefile              test / bench / docs / clean
+├── Project.toml          Package metadata
+└── README.md             This very template
 ```
 
-## Usage
-
-```julia
-using StrictTemplate
-```
-
-<!-- Replace with real examples — the morphisms your users compose. -->
-
-## Documentation
-
-[AdjointAntics.github.io/StrictTemplate.jl](https://AdjointAntics.github.io/StrictTemplate.jl/dev/)
+See [TEMPLATE.md](TEMPLATE.md) for the 4-step creation guide.
 
 ---
 
@@ -73,7 +70,7 @@ The infrastructure writes itself. The documentation does not.
 
 ## Contributing
 
-[Open an issue](https://github.com/AdjointAntics/StrictTemplate.jl/issues) or submit a pull request.
+See the [Contributing Guide](CONTRIBUTING.md). [Open an issue](https://github.com/AdjointAntics/StrictTemplate.jl/issues) or submit a pull request.
 
 ## License
 
