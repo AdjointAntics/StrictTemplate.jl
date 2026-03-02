@@ -12,3 +12,8 @@ function _build_suite()
         d[:greet] = hom(:greet, greet, "World"; samples=100, seconds=1.0)
     end
 end
+
+# ─── Self-execute when included by run_benches ────────────────────────────────
+benchmark_main(ARGS) do
+    _build_suite()
+end
